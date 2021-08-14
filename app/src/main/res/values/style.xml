@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="GoogleButton">
+        <item name="background">@drawable/button_background_white</item>
+        <item name="android:drawableStart">@drawable/google</item>
+        <item name="android:textSize">@dimen/_13ssp</item>
+        <item name="android:paddingStart">@dimen/_45sdp</item>
+        <item name="android:paddingEnd">@dimen/_45sdp</item>
+        <item name="android:text">Sign Up With Google</item>
+        <item name="android:gravity">start|center_vertical</item>
+        <item name="android:drawablePadding">@dimen/_15sdp</item>
+    </style>
+</resources>
