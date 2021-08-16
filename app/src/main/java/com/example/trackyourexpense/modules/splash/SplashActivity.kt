@@ -10,7 +10,7 @@ import com.example.trackyourexpense.modules.signin.SignInActivity
 import com.example.trackyourexpense.modules.signup.SignupActivity
 
 class SplashActivity : AppCompatActivity() {
-    private val firstTime:Boolean=false
+    private val firstTime:Boolean=true
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)

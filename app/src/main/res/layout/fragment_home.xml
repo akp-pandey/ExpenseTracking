@@ -1,14 +1,192 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+<FrameLayout
+android:layout_width="match_parent"
+android:layout_height="match_parent"
     tools:context=".HomeFragment">
-
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:id="@+id/relativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+           >
 
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:paddingStart="5dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:src="@drawable/ic_back_arrow" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/sans_medium"
+                android:text="Sign Up"
+                android:textColor="@color/title_text_color"
+                android:textSize="@dimen/_16sdp"
+                tools:text="Month Name" />
+        </RelativeLayout>
+        <LinearLayout
+            android:id="@+id/llBalance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:orientation="vertical"
+            android:layout_below="@id/relativeLayout">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sans_light"
+                android:textColor="@color/text_color"
+                android:textSize="@dimen/_18sdp"
+                android:text="Account Balance"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sans_bold"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:textColor="@color/title_text_color"
+                android:textSize="@dimen/_30sdp"
+                android:text="Rs 20000"/>
+        </LinearLayout>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvIncome"
+            android:layout_width="@dimen/_130sdp"
+            android:layout_height="@dimen/_80sdp"
+            android:layout_below="@id/llBalance"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:backgroundTint="@color/teal_200"
+            android:elevation="@dimen/_5sdp"
+            app:cardCornerRadius="@dimen/_30sdp">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical">
+
+                <ImageView
+                    android:id="@+id/ivIncome"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/_16sdp"
+                    android:src="@drawable/ic_income" />
+
+                <TextView
+                    android:id="@+id/ivIncomeTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_toRightOf="@+id/ivIncome"
+                    android:fontFamily="@font/sans_light"
+                    android:text="Income"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/ivIncomeAmount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/ivIncomeTitle"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_toRightOf="@+id/ivIncome"
+                    android:fontFamily="@font/sans_bold"
+                    android:text="Rs 20000"
+                    android:textColor="@color/white" />
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvExpense"
+            android:layout_width="@dimen/_130sdp"
+            android:layout_height="@dimen/_80sdp"
+            android:layout_below="@id/llBalance"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:backgroundTint="@color/teal_700"
+            android:elevation="@dimen/_5sdp"
+            app:cardCornerRadius="@dimen/_30sdp">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical">
+
+                <ImageView
+                    android:id="@+id/ivExpense"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/_16sdp"
+                    android:src="@drawable/ic_expense" />
+
+                <TextView
+                    android:id="@+id/ivExpenseTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_toRightOf="@+id/ivExpense"
+                    android:fontFamily="@font/sans_light"
+                    android:text="Expense"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/ivExpenseAmount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/ivExpenseTitle"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_toRightOf="@+id/ivExpense"
+                    android:fontFamily="@font/sans_bold"
+                    android:text="Rs 20000"
+                    android:textColor="@color/white" />
+            </RelativeLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/tvRecentTransaction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cvExpense"
+            android:textColor="@color/title_text_color"
+            android:textSize="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:fontFamily="@font/sans_bold"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:text="Recent Transaction"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvRecentTransaction"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvRecentTransaction"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:layout_marginEnd="@dimen/_60sdp"
+            android:layout_marginBottom="@dimen/_16sdp"
+            tools:listitem="@layout/recent_transaction_layout" />
+    </RelativeLayout>
 </FrameLayout>
+</layout>

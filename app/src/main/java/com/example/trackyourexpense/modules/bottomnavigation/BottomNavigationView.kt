@@ -1,5 +1,6 @@
 package com.example.trackyourexpense.modules.bottomnavigation
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -12,6 +13,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupWithNavController
 import com.example.trackyourexpense.R
+import com.example.trackyourexpense.modules.transaction.TransactionActivity
 import kotlinx.android.synthetic.main.activity_bottom_navigation_view.*
 
 class BottomNavigationView : AppCompatActivity() {
@@ -29,7 +31,26 @@ class BottomNavigationView : AppCompatActivity() {
         bottomNavigationView.setupWithNavController(navController)
 
         setUp()
+        setUpEvent()
 
+    }
+
+    private fun setUpEvent() {
+        ivExpense.setOnClickListener {
+            val intent=Intent(this,TransactionActivity::class.java)
+            intent.putExtra("category","expense")
+            startActivity(intent)
+        }
+        ivIncome.setOnClickListener {
+            val intent=Intent(this,TransactionActivity::class.java)
+            intent.putExtra("category","income")
+            startActivity(intent)
+        }
+        ivTransaction.setOnClickListener {
+            val intent=Intent(this,TransactionActivity::class.java)
+            intent.putExtra("category","transaction")
+            startActivity(intent)
+        }
     }
 
     private fun setUp() {

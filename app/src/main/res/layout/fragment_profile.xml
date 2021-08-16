@@ -4,11 +4,105 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ProfileFragment">
-
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:id="@+id/llProfileInfo"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_150sdp">
+
+            <ImageView
+                android:id="@+id/ivProfilePic"
+                android:layout_width="@dimen/_80sdp"
+                android:layout_height="@dimen/_80sdp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_baseline_account_circle_24"
+                android:layout_marginStart="@dimen/_16sdp" />
+
+            <TextView
+                android:id="@+id/tvUserName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_toRightOf="@id/ivProfilePic"
+                android:textSize="@dimen/_16sdp"
+                android:textColor="@color/title_text_color"
+                android:fontFamily="@font/sans_bold"
+                android:text="Username" />
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/ivProfilePic"
+                android:layout_below="@+id/tvUserName"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:textColor="@color/text_color"
+                android:fontFamily="@font/sans_light"
+                android:textSize="@dimen/_12sdp"
+                android:text="Abhishek Kumar Pandey"/>
+
+
+        </RelativeLayout>
+        <LinearLayout
+            android:paddingVertical="@dimen/_10sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_10sdp"
+            android:layout_below="@id/llProfileInfo"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_50sdp"
+                android:gravity="center_vertical"
+                android:drawablePadding="@dimen/_10sdp"
+                android:textSize="@dimen/_16sdp"
+                android:textColor="@color/title_text_color"
+                android:fontFamily="@font/sans_medium"
+                android:drawableStart="@drawable/ic_account"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:text="Account"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_50sdp"
+                android:gravity="center_vertical"
+                android:drawablePadding="@dimen/_10sdp"
+                android:textSize="@dimen/_16sdp"
+                android:textColor="@color/title_text_color"
+                android:fontFamily="@font/sans_medium"
+                android:drawableStart="@drawable/ic_settings"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:text="Settings"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_50sdp"
+                android:gravity="center_vertical"
+                android:drawablePadding="@dimen/_10sdp"
+                android:textSize="@dimen/_16sdp"
+                android:textColor="@color/title_text_color"
+                android:fontFamily="@font/sans_medium"
+                android:drawableStart="@drawable/ic_export"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:text="Export"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_50sdp"
+                android:gravity="center_vertical"
+                android:drawablePadding="@dimen/_10sdp"
+                android:textSize="@dimen/_16sdp"
+                android:textColor="@color/title_text_color"
+                android:fontFamily="@font/sans_medium"
+                android:drawableStart="@drawable/ic_logout"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:text="Logout"/>
+
+        </LinearLayout>
+    </RelativeLayout>
+
+
 
 </FrameLayout>

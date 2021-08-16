@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TrackYourExpense">
         <activity
+            android:name=".modules.transaction.TransactionActivity"
+            android:exported="true" />
+        <activity
             android:name=".modules.bottomnavigation.BottomNavigationView"
             android:exported="true" />
         <activity
