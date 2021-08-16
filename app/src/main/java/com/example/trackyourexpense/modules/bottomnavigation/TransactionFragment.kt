@@ -5,7 +5,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.cardview.widget.CardView
+import androidx.recyclerview.widget.RecyclerView
 import com.example.trackyourexpense.R
+import com.example.trackyourexpense.adapter.RecentTransactionAdapter
+import com.example.trackyourexpense.model.getRecentTransaction
+import com.google.android.material.bottomsheet.BottomSheetDialog
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -34,8 +39,22 @@ class TransactionFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_transaction, container, false)
+       val view=inflater.inflate(R.layout.fragment_transaction, container, false)
+        val rvAllTransaction=view.findViewById<RecyclerView>(R.id.rvAllTransaction)
+        val adapter=RecentTransactionAdapter{
+
+        }
+        adapter.submitList(getRecentTransaction)
+        rvAllTransaction.adapter=adapter
+        val filterCardView=view.findViewById<CardView>(R.id.cvFilter)
+        filterCardView.setOnClickListener {
+            val dialog=BottomSheetDialog(requireContext())
+            val view=layoutInflater.inflate(R.layout.filter_bottomsheet_layout,null)
+            dialog.setContentView(view)
+            dialog.show()
+
+        }
+        return view
     }
 
     companion object {

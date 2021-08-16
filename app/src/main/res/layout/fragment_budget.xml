@@ -4,11 +4,99 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".BudgetFragment">
-
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:background="@color/purple_500">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/rlBudget"
+            android:layout_margin="@dimen/_16sdp"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:fontFamily="@font/sans_light"
+                android:textStyle="bold"
+                android:textSize="@dimen/_20sdp"
+                android:text="Your Budget?"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rs 0"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_50sdp"/>
+
+        </LinearLayout>
+        <RelativeLayout
+            android:id="@+id/relativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+           >
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:paddingStart="5dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:src="@drawable/ic_back_arrow" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/sans_medium"
+                android:text="Budget"
+                android:textColor="@color/title_text_color"
+                android:textSize="@dimen/_16sdp"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rlBudget"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_400sdp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/linear_layout_background"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="@dimen/_200sdp"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/sans_light"
+                android:gravity="center"
+                android:maxLines="2"
+                android:text="You don’t have a budget.
+Let’s make one so you in control."
+                android:textColor="@color/text_color"
+                android:textSize="@dimen/_12sdp" />
+
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/btnCreateBudget"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginVertical="@dimen/_10sdp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/button_background_violet"
+            android:fontFamily="@font/sans_medium"
+            android:text="Create a budegt"
+            android:textAllCaps="false"
+            android:textColor="@color/white" />
+
+    </RelativeLayout>
+
+
 
 </FrameLayout>

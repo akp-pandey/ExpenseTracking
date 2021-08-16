@@ -31,10 +31,10 @@ android:layout_height="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:fontFamily="@font/sans_medium"
-                android:text="Sign Up"
+                android:text="May"
                 android:textColor="@color/title_text_color"
                 android:textSize="@dimen/_16sdp"
-                tools:text="Month Name" />
+                />
         </RelativeLayout>
         <LinearLayout
             android:id="@+id/llBalance"
@@ -168,25 +168,25 @@ android:layout_height="match_parent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/cvExpense"
-            android:textColor="@color/title_text_color"
-            android:textSize="@dimen/_16sdp"
+            android:layout_marginStart="@dimen/_16sdp"
             android:layout_marginTop="@dimen/_10sdp"
             android:fontFamily="@font/sans_bold"
-            android:layout_marginStart="@dimen/_16sdp"
-            android:text="Recent Transaction"/>
+            android:text="Recent Transaction"
+            android:textColor="@color/title_text_color"
+            android:textSize="@dimen/_16sdp" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvRecentTransaction"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/tvRecentTransaction"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             android:layout_marginHorizontal="@dimen/_10sdp"
             android:layout_marginStart="@dimen/_16sdp"
             android:layout_marginTop="@dimen/_16sdp"
-            android:layout_marginEnd="@dimen/_60sdp"
             android:layout_marginBottom="@dimen/_16sdp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:listitem="@layout/recent_transaction_layout" />
     </RelativeLayout>
+
 </FrameLayout>
 </layout>
