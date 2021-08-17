@@ -123,6 +123,7 @@
                 android:layout_marginStart="@dimen/_16sdp"
                 android:text="Export"/>
             <TextView
+                android:id="@+id/tvLogOut"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_50sdp"
                 android:gravity="center_vertical"

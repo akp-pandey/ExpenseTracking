@@ -8,10 +8,14 @@ import com.example.trackyourexpense.model.RecentTransaction
 import com.example.trackyourexpense.model.recentTransactionDiffUtil
 
 
-class RecentTransactionAdapter(function: () -> Unit) :androidx.recyclerview.widget.ListAdapter<RecentTransaction,RecentTransactionViewHolder>(recentTransactionDiffUtil) {
+class RecentTransactionAdapter(private val onClick: (RecentTransaction) -> Unit) :androidx.recyclerview.widget.ListAdapter<RecentTransaction,RecentTransactionViewHolder>(recentTransactionDiffUtil) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecentTransactionViewHolder {
         val binding=RecentTransactionLayoutBinding.inflate(LayoutInflater.from(parent.context),parent,false)
-        return RecentTransactionViewHolder(binding)
+        val holder=RecentTransactionViewHolder(binding)
+        holder.itemView.setOnClickListener {
+            onClick(getItem(holder.adapterPosition))
+        }
+        return holder
     }
 
     override fun onBindViewHolder(holder: RecentTransactionViewHolder, position: Int) {

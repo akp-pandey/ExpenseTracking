@@ -5,7 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import com.example.trackyourexpense.R
+import com.google.android.material.bottomsheet.BottomSheetDialog
+import kotlinx.android.synthetic.main.logout_bottomsheet_layout.view.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -34,8 +37,21 @@ class ProfileFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile, container, false)
+        val view=inflater.inflate(R.layout.fragment_profile, container, false)
+        val tvLogout=view.findViewById<TextView>(R.id.tvLogOut)
+        tvLogout.setOnClickListener {
+            val dialog=BottomSheetDialog(requireContext())
+            val view=layoutInflater.inflate(R.layout.logout_bottomsheet_layout,null)
+
+            view.buttonNo.setOnClickListener {
+                dialog.dismiss()
+            }
+
+            dialog.setContentView(view)
+            dialog.show()
+
+        }
+        return view
     }
 
     companion object {
